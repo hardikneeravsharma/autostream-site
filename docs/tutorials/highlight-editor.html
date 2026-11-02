@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>document.documentElement.classList.add('js')</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Edit your highlight video | AutoStream</title>
+<meta name="description" content="Edit the stream highlight video AutoStream made: moments, face zoom, captions, volume.">
+<link rel="icon" href="../assets/autostream.ico">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="../"><img src="../assets/logo.png" alt="" width="30" height="30">AutoStream</a>
+    <a class="nav-get nav-get-m" href="../#download">Download</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><span class="bars" aria-hidden="true"></span><span class="sr">Menu</span></button>
+    <nav id="site-nav" aria-label="Site">
+      <a href="../#makes">What it makes</a>
+      <a href="./" aria-current="page">Tutorials</a>
+      <a href="../faq.html">FAQ</a>
+      <a class="nav-gh" href="https://github.com/hardikneeravsharma/AutoStream">GitHub</a>
+      <a class="nav-get" href="../#download">Download</a>
+    </nav>
+  </div>
+</header>
+<div class="page-head">
+  <div class="wrap">
+    <p class="crumb"><a href="./">Tutorials</a></p>
+    <h1>Edit your highlight video</h1>
+    <p>AutoStream makes the first edit. Here you decide what stays: moments, face zooms, captions and volume.</p>
+    <p class="facts">As long as you like</p>
+  </div>
+</div>
+<main id="main" class="wrap doc">
+  <aside>
+    <nav aria-label="Tutorials">
+      <p>What do you want to make?</p>
+      <ol>
+        <li><a href="install.html">Install AutoStream</a></li>
+        <li><a href="clips.html">Make clips from a recording</a></li>
+        <li><a href="reels.html">Make a song reel</a></li>
+        <li><a href="highlights.html">Make a stream highlight</a></li>
+        <li><a href="highlight-editor.html" aria-current="page">Edit your highlight video</a></li>
+        <li><a href="streaming.html">Set up automatic streaming</a></li>
+      </ol>
+    </nav>
+  </aside>
+  <article>
+<figure style="margin-bottom: var(--s6); max-width: 880px">
+  <img class="shot" src="../media/app-editor.jpg" width="1600" height="1610" loading="lazy"
+       alt="The highlight editor: the video, a row of moments, face zooms, your captions, your team's captions, mic and game volume, and on the right everything that was said">
+  <figcaption>The editor, open on a real 20-minute highlight. The preview on top plays the video the way it will
+    be made.</figcaption>
+</figure>
+
+<p><b>You need:</b> a highlight video AutoStream made (see <a href="highlights.html">the last tutorial</a>).</p>
+
+<ol class="how">
+  <li>
+    <h3>Open it</h3>
+    <p>On the <b>Clips</b> page, click the recording, then <b>Edit the highlight video</b>. Press <em>Play</em>, or
+      jump with <em>Previous moment</em> and <em>Next moment</em>.</p>
+  </li>
+  <li>
+    <h3>Remove or trim a moment</h3>
+    <p>Each kept stretch is a block on the <em>Moments</em> row. Drag its edges to trim it, or select it and press
+      <em>Remove this moment</em>. A removed moment stays on the row, greyed out, so you can bring it back.</p>
+  </li>
+  <li>
+    <h3>Zoom on your face</h3>
+    <p>First check the box sits on your camera: <em>Move the facecam box</em>. Then draw a zoom on the <em>Face
+      zoom</em> row for exactly as long as you want it, and drag it to move or resize it.</p>
+  </li>
+  <li>
+    <h3>Fix a caption</h3>
+    <p>Everything said is listed on the right, next to the moment it belongs to. Change the words there to fix the
+      caption, or click its time to hear it. On the captions row, drag a caption to move it or its edge to retime
+      it. Choose English or Hinglish with <em>Captions in the video</em>.</p>
+  </li>
+  <li>
+    <h3>Set the volume</h3>
+    <p>Your mic and the game each have a line. Click it to add a point, drag a point to make it louder or quieter,
+      double-click to take it away.</p>
+  </li>
+  <li>
+    <h3>Press <b>Make video</b></h3>
+    <p>It makes a new video next to the original, which stays as it was. Your changes are saved as you go, and Undo
+      works throughout. Change something later and the button becomes <em>Make it again</em>.</p>
+  </li>
+</ol>
+
+<details class="tech">
+  <summary><span>Technical details<small>Files, loudness, team voice</small></span></summary>
+  <div class="body">
+    <h3>What it writes</h3>
+    <p><code>&lt;your video&gt;_edited.mp4</code> and a matching <code>.srt</code> subtitle file, beside the original.
+      The project is kept in <code>&lt;your video&gt;.edit.json</code>.</p>
+    <h3>Overall volume</h3>
+    <p>The <em>Overall volume</em> slider moves the loudness the finished video is aimed at; 0 dB is the usual
+      -16 LUFS for YouTube.</p>
+    <h3>Your team's voice</h3>
+    <p><em>Write down the team's voice</em> transcribes the game track, where your team's voice comms are, into a
+      second row of captions above yours, marked <code>[Team]</code> in the subtitle file. Like your own captions it
+      needs an NVIDIA graphics card; where it cannot run, the button says so rather than failing halfway.</p>
+    <h3>When it renders</h3>
+    <p>Make video waits while you are live, recording or cutting clips, so it never costs you frames in a game.</p>
+  </div>
+</details>
+
+<nav class="next" aria-label="Next and previous tutorial"><a href="highlights.html"><small>Previous</small>Make a stream highlight</a><a href="streaming.html" style="text-align:right"><small>Next</small>Set up automatic streaming</a></nav>
+  </article>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <div>
+      <p>AutoStream is free software under the Apache License 2.0, made in the open on GitHub. Bugs and ideas go
+        in the issue tracker.</p>
+    </div>
+    <ul>
+      <li><a href="./">Tutorials</a></li>
+      <li><a href="../faq.html">FAQ</a></li>
+      <li><a href="https://github.com/hardikneeravsharma/AutoStream">Source</a></li>
+      <li><a href="https://github.com/hardikneeravsharma/AutoStream/issues">Issues</a></li>
+      <li><a href="https://github.com/hardikneeravsharma/AutoStream/releases">Releases</a></li>
+    </ul>
+  </div>
+</footer>
+<script src="../assets/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>document.documentElement.classList.add('js')</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Set up automatic streaming | AutoStream</title>
+<meta name="description" content="Set AutoStream up to go live on YouTube, Twitch or Kick by itself when you play.">
+<link rel="icon" href="../assets/autostream.ico">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="../"><img src="../assets/logo.png" alt="" width="30" height="30">AutoStream</a>
+    <a class="nav-get nav-get-m" href="../#download">Download</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><span class="bars" aria-hidden="true"></span><span class="sr">Menu</span></button>
+    <nav id="site-nav" aria-label="Site">
+      <a href="../#makes">What it makes</a>
+      <a href="./" aria-current="page">Tutorials</a>
+      <a href="../faq.html">FAQ</a>
+      <a class="nav-gh" href="https://github.com/hardikneeravsharma/AutoStream">GitHub</a>
+      <a class="nav-get" href="../#download">Download</a>
+    </nav>
+  </div>
+</header>
+<div class="page-head">
+  <div class="wrap">
+    <p class="crumb"><a href="./">Tutorials</a></p>
+    <h1>Set up automatic streaming</h1>
+    <p>Optional, and Windows only. Open a game and AutoStream goes live, records, and stops when you do.</p>
+    <p class="facts">About fifteen minutes, once</p>
+  </div>
+</div>
+<main id="main" class="wrap doc">
+  <aside>
+    <nav aria-label="Tutorials">
+      <p>What do you want to make?</p>
+      <ol>
+        <li><a href="install.html">Install AutoStream</a></li>
+        <li><a href="clips.html">Make clips from a recording</a></li>
+        <li><a href="reels.html">Make a song reel</a></li>
+        <li><a href="highlights.html">Make a stream highlight</a></li>
+        <li><a href="highlight-editor.html">Edit your highlight video</a></li>
+        <li><a href="streaming.html" aria-current="page">Set up automatic streaming</a></li>
+      </ol>
+    </nav>
+  </aside>
+  <article>
+<div class="callout"><p><b>You do not need any of this to make clips, reels or highlights.</b> This is only for people
+  who stream and want AutoStream to start and stop the stream for them.</p></div>
+
+<p><b>You need:</b> Windows, <a href="https://obsproject.com">OBS Studio</a> (the free streaming app), and an account
+  on YouTube, Twitch or Kick. On YouTube, live streaming has to be switched on for your channel first (on youtube.com,
+  <em>Create</em>, then <em>Go live</em>). On a new channel that can take up to 24 hours, so do it first.</p>
+
+<ol class="how">
+  <li>
+    <h3>Turn streaming on</h3>
+    <p>Choose <b>Stream and clip</b> the first time AutoStream opens, or switch it on later in <em>Settings</em>. Then
+      pick where you stream.</p>
+  </li>
+  <li>
+    <h3>Connect your channel</h3>
+    <p><b>Twitch:</b> paste your stream key, or sign in so it can set the title and category too.
+      <b>Kick:</b> sign in once. <b>YouTube:</b> about ten minutes, following a checklist in the app; the steps are
+      in <a href="#youtube">the details below</a>.</p>
+  </li>
+  <li>
+    <h3>Connect OBS</h3>
+    <p>Close OBS, then press <b>Set it up for me</b>. Check the path to OBS and press <em>Test connection</em>.
+      AutoStream opens OBS itself when you start playing, so you never touch its stream settings.</p>
+  </li>
+  <li>
+    <h3>Pick your games</h3>
+    <p><em>Scan my computer</em> finds the games you have installed, Steam and other launchers included. Start on
+      <b>Unlisted</b> for your first week, so only people with the link can see the streams.</p>
+  </li>
+  <li>
+    <h3>Play</h3>
+    <p>Open a game and keep it open for 30 seconds. AutoStream starts the stream privately and counts down 20
+      seconds, with a Cancel button, before anyone can see it. Close the game and it waits five minutes, in case the
+      game crashed, then ends the stream.</p>
+    <img class="shot" src="../media/app-countdown.jpg" width="1060" height="420" loading="lazy"
+         alt="AutoStream holding a new stream private: a ring counting down 4 seconds until public, and a Cancel button">
+    <p class="muted">From an earlier version of the app. It works the same way today.</p>
+  </li>
+</ol>
+
+<h2>Every way to stop it</h2>
+<ul>
+  <li><b>Cancel</b> during the private countdown.</li>
+  <li><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>K</kbd> from inside any game stops the stream.</li>
+  <li>In the Library, turn a game's <em>Streams</em> switch off: it is recorded, never streamed.</li>
+  <li>Turn <em>Go live</em> off in Settings and AutoStream only records.</li>
+</ul>
+<p>When AutoStream decides not to stream (on battery, in quiet hours, or if the service refuses), it records the game
+  instead. The Logs page says why.</p>
+
+<h2>If something is off</h2>
+<dl class="fixes">
+  <dt>The stream is a black screen</dt>
+  <dd>Anti-cheat (Valorant, Delta Force, games with EasyAntiCheat) blocks OBS's game capture unless OBS runs as
+    administrator. Turn on <em>Start OBS as administrator</em> in <em>Settings, OBS</em>.</dd>
+  <dt>Nothing happens when I start a game</dt>
+  <dd>It did not recognise the game. The Logs page shows what it saw; add the game's <code>.exe</code> under
+    <code>games:</code> in <code>games.yaml</code>.</dd>
+  <dt>It went live for something that is not a game</dt>
+  <dd>Add that <code>.exe</code> under <code>blocklist:</code> in <code>games.yaml</code>.</dd>
+  <dt>YouTube stopped working after about a week, with <code>invalid_grant</code></dt>
+  <dd>Your Google app is still in Testing. See step 4 of the YouTube setup below.</dd>
+  <dt>Stuck on starting, then it gives up</dt>
+  <dd>YouTube is not receiving video. Check live streaming is switched on for the channel, then run setup again.</dd>
+</dl>
+
+<details class="tech" id="youtube">
+  <summary><span>YouTube: your own Google Cloud project<small>Six stops in Google's console</small></span></summary>
+  <div class="body">
+    <p>AutoStream talks to YouTube through a project that belongs to you, so the daily API allowance is yours alone.
+      The wizard shows these as a checklist.</p>
+    <ol>
+      <li>Go to <a href="https://console.cloud.google.com/projectcreate">console.cloud.google.com</a> and create a
+        project. Any name.</li>
+      <li><em>APIs &amp; Services, Library</em>: enable <b>YouTube Data API v3</b>.</li>
+      <li><em>Google Auth Platform, Branding</em>: set an app name and your email.</li>
+      <li><em>Google Auth Platform, Audience</em>: user type <b>External</b>, then <b>Publish App</b>. Skip
+        verification; you do not need it.</li>
+      <li><em>Google Auth Platform, Data Access</em>: add the scopes <code>.../auth/youtube</code> and
+        <code>.../auth/youtube.force-ssl</code>.</li>
+      <li><em>Google Auth Platform, Clients</em>: create a client of type <b>Desktop app</b> and download its JSON.
+        Paste its contents into the wizard and press <em>Save credentials</em>.</li>
+    </ol>
+    <div class="callout warn"><p><b>Do not skip step 4.</b> While the app is in Testing, Google blocks everyone not on
+      its test-user list, and even for you the sign-in expires after about seven days and streaming quietly stops with
+      <code>invalid_grant</code>. <em>Access blocked</em> or <em>Error 403</em> means this step.</p></div>
+    <p>Then press <em>Authorise with YouTube</em>. Google says <b>"Google hasn't verified this app"</b>. That is
+      expected: it is your own personal app. Choose <em>Advanced</em>, then <em>Go to (your app name)
+      (unsafe)</em>, and allow access.</p>
+  </div>
+</details>
+
+<details class="tech">
+  <summary><span>OBS by hand, and how a session runs<small>Websocket settings, the states, recording</small></span></summary>
+  <div class="body">
+    <h3>If Set it up for me cannot write OBS's settings</h3>
+    <p>In OBS, <em>Tools, WebSocket Server Settings</em>: tick <em>Enable WebSocket server</em>, leave the port at
+      4455, set a password, and click <b>Apply</b> before OK. Then press <em>Read the settings from OBS</em>. Use a
+      Game Capture scene, never Display Capture, so a wrong detection shows black rather than your desktop.</p>
+    <h3>The states</h3>
+<pre><code>IDLE -> ARMING -> STARTING -> TESTING -> LIVE -> COOLDOWN -> STOPPING -> IDLE</code></pre>
+    <p>AutoStream checks what is running every three seconds. A game's <code>.exe</code> is matched against a public
+      list of about 10,000 games and your Steam library. Arming is the 30-second wait; Testing is the 20 seconds
+      private; Cooldown is the five minutes after you close the game. After eight hours a broadcast ends regardless.</p>
+    <h3>Switching games</h3>
+    <p>Stay in a different game for a minute and the title is rewritten for it, or, if you chose it in Settings, a
+      new broadcast starts.</p>
+    <h3>Recording while you stream</h3>
+    <p>Off by default: switch it on in <em>Settings, Recording</em>. Budget 20 to 30 GB an hour at the top quality.
+      Your mic, the game and the desktop go on separate audio tracks, which is what lets the clipper hear your
+      reactions.</p>
+    <h3>More safety rails</h3>
+    <p>An empty file called <code>NOSTREAM</code> next to the app stops anything auto-starting. A password manager or
+      banking app being open vetoes the session. It will not start a broadcast by itself on battery, with under 25 GB
+      free, or with the YouTube API allowance nearly spent.</p>
+    <h3>Pause and the three cards</h3>
+    <p>Pause keeps the broadcast running and shows your <em>be right back</em> card. Point <em>stream starting</em>,
+      <em>be right back</em> and <em>thanks for watching</em> at a video file or an overlay URL and AutoStream makes
+      the OBS scenes itself.</p>
+  </div>
+</details>
+
+<nav class="next" aria-label="Next and previous tutorial"><a href="highlight-editor.html"><small>Previous</small>Edit your highlight video</a><a href="../faq.html" style="text-align:right"><small>Still stuck?</small>The FAQ</a></nav>
+  </article>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <div>
+      <p>AutoStream is free software under the Apache License 2.0, made in the open on GitHub. Bugs and ideas go
+        in the issue tracker.</p>
+    </div>
+    <ul>
+      <li><a href="./">Tutorials</a></li>
+      <li><a href="../faq.html">FAQ</a></li>
+      <li><a href="https://github.com/hardikneeravsharma/AutoStream">Source</a></li>
+      <li><a href="https://github.com/hardikneeravsharma/AutoStream/issues">Issues</a></li>
+      <li><a href="https://github.com/hardikneeravsharma/AutoStream/releases">Releases</a></li>
+    </ul>
+  </div>
+</footer>
+<script src="../assets/site.js" defer></script>
+</body>
+</html>

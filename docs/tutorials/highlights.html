@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>document.documentElement.classList.add('js')</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Make a stream highlight | AutoStream</title>
+<meta name="description" content="Turn a whole Valorant stream into a highlight video with AutoStream.">
+<link rel="icon" href="../assets/autostream.ico">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="../"><img src="../assets/logo.png" alt="" width="30" height="30">AutoStream</a>
+    <a class="nav-get nav-get-m" href="../#download">Download</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><span class="bars" aria-hidden="true"></span><span class="sr">Menu</span></button>
+    <nav id="site-nav" aria-label="Site">
+      <a href="../#makes">What it makes</a>
+      <a href="./" aria-current="page">Tutorials</a>
+      <a href="../faq.html">FAQ</a>
+      <a class="nav-gh" href="https://github.com/hardikneeravsharma/AutoStream">GitHub</a>
+      <a class="nav-get" href="../#download">Download</a>
+    </nav>
+  </div>
+</header>
+<div class="page-head">
+  <div class="wrap">
+    <p class="crumb"><a href="./">Tutorials</a></p>
+    <h1>Make a stream highlight</h1>
+    <p>Turn a whole Valorant stream into a YouTuber-style highlight video, with your reactions and captions.</p>
+    <p class="facts">A few clicks, then it works on its own</p>
+  </div>
+</div>
+<main id="main" class="wrap doc">
+  <aside>
+    <nav aria-label="Tutorials">
+      <p>What do you want to make?</p>
+      <ol>
+        <li><a href="install.html">Install AutoStream</a></li>
+        <li><a href="clips.html">Make clips from a recording</a></li>
+        <li><a href="reels.html">Make a song reel</a></li>
+        <li><a href="highlights.html" aria-current="page">Make a stream highlight</a></li>
+        <li><a href="highlight-editor.html">Edit your highlight video</a></li>
+        <li><a href="streaming.html">Set up automatic streaming</a></li>
+      </ol>
+    </nav>
+  </aside>
+  <article>
+<div class="result">
+  <video data-loop data-src="../media/highlight.mp4" poster="../media/highlight.jpg" muted loop playsinline preload="none"
+         width="1280" height="720" aria-label="Part of a stream highlight: a lost round, then the player's face and a caption"></video>
+  <div><b>What you will get</b><p>One video of your best matches from the evening, cut like the single-stream
+    highlights YouTubers post: long real stretches, the quiet bits taken out, your face when you react, and captions
+    of what you said.</p></div>
+</div>
+
+<p><b>You need:</b> a Valorant recording, and AutoStream open while you played it, so it saved each match's details
+  from the game. A recording AutoStream made itself is best: your mic is on its own track, so it can hear your
+  reactions.</p>
+
+<ol class="how">
+  <li>
+    <h3>Play with AutoStream open</h3>
+    <p>Keep it running whenever you play Valorant, even in the menus. The dashboard shows each match as it is
+      saved.</p>
+  </li>
+  <li>
+    <h3>Make clips from the recording</h3>
+    <p>Exactly as in <a href="clips.html">Make clips from a recording</a>. The highlight is built from what that
+      reading found.</p>
+  </li>
+  <li>
+    <h3>Press <b>Make the highlight video</b></h3>
+    <p>It appears with your finished clips. Nothing is read or cut again. If the highlight was already made with the
+      clips, the button says <em>Edit the highlight video</em> instead.</p>
+    <img class="shot" src="../media/app-summary.jpg" width="1600" height="530" loading="lazy"
+         alt="A recording's page on the Clips screen, with the Edit the highlight video button next to See the 63 clips cut">
+  </li>
+  <li>
+    <h3>Watch it, then make it yours</h3>
+    <p>The video is saved next to your clips. Open it in the <a href="highlight-editor.html">highlight editor</a> to
+      take out a moment, zoom on your face, fix a caption or change the volume.</p>
+  </li>
+</ol>
+
+<h2 id="captions">Captions</h2>
+<p>Captions write down what you and your team said, in English, or in Hinglish the way you would type it
+  (<em>clove neeche hai</em>). Turn them on in the editor.</p>
+<div class="callout"><p>Writing down speech needs an <b>NVIDIA graphics card</b> and a one-time download of a few
+  gigabytes. AutoStream tells you the size and asks before it downloads anything. Without one, the highlight still
+  works, just without captions.</p></div>
+
+<h2>If something is off</h2>
+<dl class="fixes">
+  <dt>There is no highlight button</dt>
+  <dd>AutoStream did not get the match details for that recording, so it cannot tell where rounds start and end.
+    Keep it open while you play next time, or try <em>Fetch match records now</em> on the Clips page, which reaches
+    back over your recent matches.</dd>
+  <dt>It never zooms on my face</dt>
+  <dd>Show it where your camera is: in the editor, <em>Move the facecam box</em> and drag the box over it.</dd>
+</dl>
+
+<details class="tech">
+  <summary><span>Technical details<small>How it picks the stretches</small></span></summary>
+  <div class="body">
+    <p>Your kills, your deaths and your reactions on the mic become events on the recording's clock. Events within
+      12 seconds of each other are one stretch. A stretch starts where the situation started (the first contact of
+      its fight, or the moment you were left last alive) and ends when the round is decided and you have finished
+      reacting, never running into the next round's fight. Inside a stretch only dead time is cut: six seconds with
+      both the mic and the game quiet and nothing brewing.</p>
+    <p>It covers the three strongest matches of the session at four to six minutes each, with at most one
+      deathmatch. The last kill of a run of three or more gets a small punch-in, and the video ends on the game's
+      result screen and your channel's end screen. Rounds come from Riot's match record, which is why Valorant is
+      needed.</p>
+    <p>Hinglish captions are written from what the speech-to-text heard in Devanagari, letter by letter, so they never
+      invent a word; English and game words said in Hindi come back in English spelling.</p>
+  </div>
+</details>
+
+<nav class="next" aria-label="Next and previous tutorial"><a href="reels.html"><small>Previous</small>Make a song reel</a><a href="highlight-editor.html" style="text-align:right"><small>Next</small>Edit your highlight video</a></nav>
+  </article>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <div>
+      <p>AutoStream is free software under the Apache License 2.0, made in the open on GitHub. Bugs and ideas go
+        in the issue tracker.</p>
+    </div>
+    <ul>
+      <li><a href="./">Tutorials</a></li>
+      <li><a href="../faq.html">FAQ</a></li>
+      <li><a href="https://github.com/hardikneeravsharma/AutoStream">Source</a></li>
+      <li><a href="https://github.com/hardikneeravsharma/AutoStream/issues">Issues</a></li>
+      <li><a href="https://github.com/hardikneeravsharma/AutoStream/releases">Releases</a></li>
+    </ul>
+  </div>
+</footer>
+<script src="../assets/site.js" defer></script>
+</body>
+</html>

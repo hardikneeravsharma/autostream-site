@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>document.documentElement.classList.add('js')</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Install AutoStream | AutoStream</title>
+<meta name="description" content="Install AutoStream on Windows or Mac.">
+<link rel="icon" href="../assets/autostream.ico">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="../"><img src="../assets/logo.png" alt="" width="30" height="30">AutoStream</a>
+    <a class="nav-get nav-get-m" href="../#download">Download</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><span class="bars" aria-hidden="true"></span><span class="sr">Menu</span></button>
+    <nav id="site-nav" aria-label="Site">
+      <a href="../#makes">What it makes</a>
+      <a href="./" aria-current="page">Tutorials</a>
+      <a href="../faq.html">FAQ</a>
+      <a class="nav-gh" href="https://github.com/hardikneeravsharma/AutoStream">GitHub</a>
+      <a class="nav-get" href="../#download">Download</a>
+    </nav>
+  </div>
+</header>
+<div class="page-head">
+  <div class="wrap">
+    <p class="crumb"><a href="./">Tutorials</a></p>
+    <h1>Install AutoStream</h1>
+    <p>Download it, open it, and choose what you want it to do.</p>
+    <p class="facts">About five minutes</p>
+  </div>
+</div>
+<main id="main" class="wrap doc">
+  <aside>
+    <nav aria-label="Tutorials">
+      <p>What do you want to make?</p>
+      <ol>
+        <li><a href="install.html" aria-current="page">Install AutoStream</a></li>
+        <li><a href="clips.html">Make clips from a recording</a></li>
+        <li><a href="reels.html">Make a song reel</a></li>
+        <li><a href="highlights.html">Make a stream highlight</a></li>
+        <li><a href="highlight-editor.html">Edit your highlight video</a></li>
+        <li><a href="streaming.html">Set up automatic streaming</a></li>
+      </ol>
+    </nav>
+  </aside>
+  <article>
+<h2>On Windows</h2>
+<ol class="how">
+  <li>
+    <h3>Download the installer</h3>
+    <p><a data-asset="win-setup" href="https://github.com/hardikneeravsharma/AutoStream/releases/latest">Download AutoStream for Windows</a>
+      and open the file. Use the installer unless you need the portable version: if you would rather not install
+      anything, take the
+      <a data-asset="win-zip" href="https://github.com/hardikneeravsharma/AutoStream/releases/latest">portable zip</a>, unzip it
+      somewhere it can stay, such as <code>C:\AutoStream</code>, and open <b>AutoStream</b> from there.</p>
+  </li>
+  <li>
+    <h3>If Windows warns you, choose Run anyway</h3>
+    <p>AutoStream is not signed with a paid certificate yet, so Windows does not know who made it and says it
+      protected your PC. Choose <em>More info</em>, then <em>Run anyway</em>. You only see this once. To check the file
+      first, compare it with the checksum published beside it on the
+      <a href="https://github.com/hardikneeravsharma/AutoStream/releases/latest">release page</a>; the
+      <a href="https://github.com/hardikneeravsharma/AutoStream">source code</a> is public.</p>
+  </li>
+  <li>
+    <h3>Choose <b>Just make clips</b></h3>
+    <p>The first time it opens, AutoStream asks what you want it to do. <b>Just make clips</b> is marked
+      recommended and is ready in seconds: no account and nothing else to install. The one video tool it needs, it
+      offers to install for you the first time you make clips.</p>
+    <p class="muted">Want it to go live for you too? Choose <b>Stream and clip</b> instead, or switch it on later in
+      Settings. That is the <a href="streaming.html">last tutorial</a>.</p>
+  </li>
+  <li>
+    <h3>Make your first clips</h3>
+    <p>That is it. Next: <a href="clips.html">make clips from a recording</a>.</p>
+  </li>
+</ol>
+<div class="callout">
+  <p><b>Closing the window does not quit.</b> AutoStream keeps running in the system tray, by the clock, so it
+    can notice when you start a game. To quit, use <em>Quit</em> in the window or in the tray icon's menu.</p>
+</div>
+
+<h2 id="mac">On a Mac</h2>
+<p>The Mac app makes clips and song reels. Automatic live streaming is Windows only. Record on your PC, copy the
+  video over, and cut it on the Mac.</p>
+<ol class="how">
+  <li>
+    <h3>Download the right version</h3>
+    <p><a data-asset="mac-arm" href="https://github.com/hardikneeravsharma/AutoStream/releases/latest">Apple Silicon</a> for an M1, M2, M3
+      or newer, or <a data-asset="mac-intel" href="https://github.com/hardikneeravsharma/AutoStream/releases/latest">Intel</a> for older Macs.
+      Not sure? Apple menu, <em>About This Mac</em>, and look at the chip. macOS 11 or newer.</p>
+  </li>
+  <li>
+    <h3>Install the video tool</h3>
+    <p>AutoStream uses a free tool called ffmpeg to cut video. Paste this into the Terminal app (it needs
+      <a href="https://brew.sh">Homebrew</a>):</p>
+<pre><code>brew install ffmpeg-full</code></pre>
+  </li>
+  <li>
+    <h3>Open it the first time</h3>
+    <p>The Mac refuses an app it has not checked yet. Open <em>System Settings</em>, then <em>Privacy &amp;
+      Security</em>, scroll down and choose <em>Open Anyway</em>.</p>
+  </li>
+</ol>
+
+<h2>Where your videos go</h2>
+<p>Recordings, clips and reels are saved in your <b>Videos</b> folder, under <code>AutoStream</code>. Reinstalling
+  or updating never touches them, and AutoStream never deletes a recording.</p>
+
+<details class="tech">
+  <summary><span>Technical details<small>Start at login, the full ffmpeg build, checksums</small></span></summary>
+  <div class="body">
+    <h3>Start AutoStream when Windows starts</h3>
+    <p>Finish setup first. Then open PowerShell <em>as Administrator</em> and run the script that sits next to
+      <code>AutoStream.exe</code>, changing the path to wherever AutoStream lives:</p>
+<pre><code>powershell -ExecutionPolicy Bypass -File "C:\AutoStream\Run-At-Startup.ps1"</code></pre>
+    <p>It registers a scheduled task that starts AutoStream 45 seconds after you log in, starts it now, and checks it
+      is running. Add <code>-Remove</code> to undo it. Administrator is only needed to register the task; AutoStream
+      itself runs as you, because it has to see your desktop and your games.</p>
+    <h3>Why the full ffmpeg on a Mac</h3>
+    <p>The plain Homebrew <code>ffmpeg</code> cannot draw text, so captions and titles would be missing.
+      <code>ffmpeg-full</code> can.</p>
+    <h3>Checking the download</h3>
+    <p>Every release is built on GitHub's own machines from the public source, with a SHA-256 checksum next to each
+      file on the <a href="https://github.com/hardikneeravsharma/AutoStream/releases">releases page</a>.</p>
+  </div>
+</details>
+
+<nav class="next" aria-label="Next and previous tutorial"><span></span><a href="clips.html" style="text-align:right"><small>Next</small>Make clips from a recording</a></nav>
+  </article>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <div>
+      <p>AutoStream is free software under the Apache License 2.0, made in the open on GitHub. Bugs and ideas go
+        in the issue tracker.</p>
+    </div>
+    <ul>
+      <li><a href="./">Tutorials</a></li>
+      <li><a href="../faq.html">FAQ</a></li>
+      <li><a href="https://github.com/hardikneeravsharma/AutoStream">Source</a></li>
+      <li><a href="https://github.com/hardikneeravsharma/AutoStream/issues">Issues</a></li>
+      <li><a href="https://github.com/hardikneeravsharma/AutoStream/releases">Releases</a></li>
+    </ul>
+  </div>
+</footer>
+<script src="../assets/site.js" defer></script>
+</body>
+</html>

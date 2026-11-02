@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>document.documentElement.classList.add('js')</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FAQ | AutoStream</title>
+<meta name="description" content="Is AutoStream free? Do I need to stream to use it? Which games does it work with? Short answers about old recordings, games, clips, reels, highlight videos, captions and Mac.">
+<link rel="icon" href="assets/autostream.ico">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="assets/logo.png" alt="" width="30" height="30">AutoStream</a>
+    <a class="nav-get nav-get-m" href="./#download">Download</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><span class="bars" aria-hidden="true"></span><span class="sr">Menu</span></button>
+    <nav id="site-nav" aria-label="Site">
+      <a href="./#makes">What it makes</a>
+      <a href="tutorials/">Tutorials</a>
+      <a href="faq.html" aria-current="page">FAQ</a>
+      <a class="nav-gh" href="https://github.com/hardikneeravsharma/AutoStream">GitHub</a>
+      <a class="nav-get" href="./#download">Download</a>
+    </nav>
+  </div>
+</header>
+<div class="page-head">
+  <div class="wrap">
+    <h1>Questions people ask</h1>
+    <p>Short answers. The <a href="tutorials/" style="color:var(--signal)">tutorials</a> have the step-by-step ones.</p>
+  </div>
+</div>
+<main id="main">
+  <section>
+    <div class="wrap faq">
+      <details open>
+        <summary>Is it really free?</summary>
+        <div class="a"><p>Yes. No paid version, no trial, no account. It is open source, so anyone can read the code on
+          <a href="https://github.com/hardikneeravsharma/AutoStream">GitHub</a>.</p></div>
+      </details>
+      <details open>
+        <summary>Do I need to stream to use it?</summary>
+        <div class="a"><p>No. Most people only use it to make clips, reels and highlight videos. Give it any video of you
+          playing, even an old one, and it works. Automatic streaming is an extra you can switch on later, or never.</p></div>
+      </details>
+      <details>
+        <summary>Can I use an old recording?</summary>
+        <div class="a"><p>Yes. Any video of you playing works, however old: a recording you made, or a stream
+          you downloaded. Pick the file, drag the two handles to the part you
+          want read, and it does the rest. You do not need to have had AutoStream open when you played.</p>
+          <p>For Valorant, the most exact results use match info from the Riot game client. AutoStream saves it while
+          you play, and can fetch your last twenty matches later. Without it, it reads the kills off the screen.</p></div>
+      </details>
+      <details>
+        <summary>Which games does it work with?</summary>
+        <div class="a">
+          <p><b>Valorant</b>: kills from the match info, including multi-kills and clutches. Keep AutoStream open while you
+            play so it can save that info.</p>
+          <p><b>Counter-Strike 2</b>: kills from the recording. Save the match replay and it can also name rounds,
+            clutches and kills through smoke.</p>
+          <p><b>Marvel Rivals</b>: a video of each match with the waiting removed, plus a short highlight of its fights.</p>
+          <p><b>Delta Force</b>: kills, with no setup.</p>
+          <p><b>Any other game</b>: show it one example kill, which takes about a minute. Or let it find the loud
+            moments in your audio. It calls those moments, not kills, because it cannot tell a kill from a death by
+            sound.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Does it upload my recordings?</summary>
+        <div class="a"><p>No. Recordings, clips and reels are saved in your Videos folder and stay there. There is no
+          AutoStream server for them to go to. Uploading is up to you.</p>
+          <p>It only goes online for what you ask: your stream goes to YouTube, Twitch or Kick if you turn streaming on,
+          a song link is fetched from YouTube, and Valorant match details come from the Riot game client on your own PC.</p></div>
+      </details>
+      <details>
+        <summary>Do I need another app?</summary>
+        <div class="a"><p>Not for clips, reels or highlights. AutoStream cuts video with a free tool called
+          ffmpeg. On Windows it offers to install it for you the first time; on a Mac it is one line to paste.</p>
+          <p>Only if you want AutoStream to go live for you does it need OBS, the free streaming app, and it sets OBS
+          up itself. See <a href="tutorials/streaming.html">Set up automatic streaming</a>.</p></div>
+      </details>
+      <details>
+        <summary>Can it make vertical Shorts?</summary>
+        <div class="a"><p>Yes. Every clip can come with a tall 1080 by 1920 version, with a caption on it, ready for
+          YouTube Shorts, Instagram Reels or TikTok. Song reels are tall by default.</p></div>
+      </details>
+      <details>
+        <summary>Can I edit it after it's made?</summary>
+        <div class="a"><p>Yes. Reels open on a timeline where you can move, trim and change every shot. Highlight
+          videos open in an editor where you can remove moments, zoom on your face, fix captions and change the
+          volume. Nothing is made again until you press the button, and the original is never changed.</p></div>
+      </details>
+      <details>
+        <summary>Do captions work on every PC?</summary>
+        <div class="a"><p>No. Captions are optional, and for now they need a Windows PC with a supported NVIDIA graphics card,
+          plus a one-time download of a few gigabytes. AutoStream shows the size and asks before downloading.
+          Everything else, including the highlight video itself, works without them.</p></div>
+      </details>
+      <details>
+        <summary>Does it work on a Mac?</summary>
+        <div class="a"><p>Yes, for clips and song reels, including the reel's timeline. Automatic live streaming and
+          captions are Windows only. Record on your PC, copy the video to the Mac, and cut it there. The
+          <a href="tutorials/install.html#mac">install guide</a> shows the one extra step.</p></div>
+      </details>
+      <details>
+        <summary>Can I choose my own song?</summary>
+        <div class="a"><p>Yes. Pick a song file from your PC, or paste a YouTube link and only the audio is downloaded.
+          You choose which part of the song to use. Whether you may publish a song is between you and whoever owns it.</p></div>
+      </details>
+      <details>
+        <summary>Can it understand funny reactions?</summary>
+        <div class="a"><p>Partly. It hears when you get much louder than you normally talk, so it catches the shouting,
+          the hype and the rage, and it puts those moments in your clips and highlights. It does not yet know a laugh
+          from a scream. With captions on, it writes down what you said, in English or Hinglish.</p></div>
+      </details>
+      <details>
+        <summary>Windows warned me when I opened it. Is it safe?</summary>
+        <div class="a"><p>The app is new and not signed yet, and signing costs money every year, so Windows treats it as
+          unknown. Choose <em>More info</em>, then <em>Run anyway</em>. Every release is built on GitHub's own machines
+          from the public source, with a checksum beside each file if you want to check what you downloaded.</p></div>
+      </details>
+      <details>
+        <summary>Something broke. Where do I report it?</summary>
+        <div class="a"><p>Open an issue on <a href="https://github.com/hardikneeravsharma/AutoStream/issues">GitHub</a>.
+          The Logs page in the app explains most problems in a sentence; include that line if you can, after checking
+          it for anything private.</p></div>
+      </details>
+      <p class="muted" style="margin-top: var(--s5)">Streaming questions (YouTube setup, black screens, stopping a
+        stream) are answered in <a href="tutorials/streaming.html">Set up automatic streaming</a>.</p>
+    </div>
+  </section>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <div>
+      <p>AutoStream is free software under the Apache License 2.0, made in the open on GitHub. Bugs and ideas go
+        in the issue tracker.</p>
+    </div>
+    <ul>
+      <li><a href="tutorials/">Tutorials</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="https://github.com/hardikneeravsharma/AutoStream">Source</a></li>
+      <li><a href="https://github.com/hardikneeravsharma/AutoStream/issues">Issues</a></li>
+      <li><a href="https://github.com/hardikneeravsharma/AutoStream/releases">Releases</a></li>
+    </ul>
+  </div>
+</footer>
+<script src="assets/site.js" defer></script>
+</body>
+</html>

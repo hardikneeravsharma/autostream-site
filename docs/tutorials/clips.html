@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>document.documentElement.classList.add('js')</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Make clips from a recording | AutoStream</title>
+<meta name="description" content="Turn any gaming recording into clips and tall Shorts with AutoStream.">
+<link rel="icon" href="../assets/autostream.ico">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="../"><img src="../assets/logo.png" alt="" width="30" height="30">AutoStream</a>
+    <a class="nav-get nav-get-m" href="../#download">Download</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><span class="bars" aria-hidden="true"></span><span class="sr">Menu</span></button>
+    <nav id="site-nav" aria-label="Site">
+      <a href="../#makes">What it makes</a>
+      <a href="./" aria-current="page">Tutorials</a>
+      <a href="../faq.html">FAQ</a>
+      <a class="nav-gh" href="https://github.com/hardikneeravsharma/AutoStream">GitHub</a>
+      <a class="nav-get" href="../#download">Download</a>
+    </nav>
+  </div>
+</header>
+<div class="page-head">
+  <div class="wrap">
+    <p class="crumb"><a href="./">Tutorials</a></p>
+    <h1>Make clips from a recording</h1>
+    <p>Pick a video of you playing. AutoStream finds the kills and cuts them into clips. You do not need to have streamed, and you need no account.</p>
+    <p class="facts">About ten minutes the first time</p>
+  </div>
+</div>
+<main id="main" class="wrap doc">
+  <aside>
+    <nav aria-label="Tutorials">
+      <p>What do you want to make?</p>
+      <ol>
+        <li><a href="install.html">Install AutoStream</a></li>
+        <li><a href="clips.html" aria-current="page">Make clips from a recording</a></li>
+        <li><a href="reels.html">Make a song reel</a></li>
+        <li><a href="highlights.html">Make a stream highlight</a></li>
+        <li><a href="highlight-editor.html">Edit your highlight video</a></li>
+        <li><a href="streaming.html">Set up automatic streaming</a></li>
+      </ol>
+    </nav>
+  </aside>
+  <article>
+<div class="result">
+  <video data-loop data-src="../media/clip-4kills.mp4" poster="../media/clip-4kills.jpg" muted loop playsinline preload="none"
+         width="960" height="540" aria-label="A clip AutoStream cut: four kills in one round"></video>
+  <div><b>What you will get</b><p>A short video of each good play, named for what is in it, like
+    <em>4 kills</em> or <em>Last alive 1v4</em>. Tall versions for Shorts too, if you want them.</p></div>
+</div>
+
+<p><b>You need:</b> AutoStream, and a video of you playing. It can be a recording AutoStream made, or one you already
+  have from anywhere else.</p>
+
+<ol class="how">
+  <li>
+    <h3>Pick the recording</h3>
+    <p>Open <b>Clips</b>. Recordings AutoStream made are already in the list: click one. For any other video,
+      press <em>Choose video</em>, pick the game it shows, then <em>Use this video</em>.</p>
+    <img class="shot" src="../media/app-summary.jpg" width="1600" height="530" loading="lazy"
+         alt="The Clips page: Choose video on the left, a 4 hour 35 minute recording picked on the right, with Find kills, See the 63 clips cut and Edit the highlight video buttons">
+  </li>
+  <li>
+    <h3>Press <b>Find kills</b></h3>
+    <p>AutoStream watches the recording for you. You can keep using your PC while it works. The settings it shows
+      are good to start with; you can change them later.</p>
+    <p class="muted">Only want part of a long video, like the one match you care about? Press <em>Change</em> next
+      to <em>Part to clip</em> and drag the two handles.</p>
+  </li>
+  <li>
+    <h3>Look at what it found</h3>
+    <p>Every moment is on a timeline of the whole recording, and in a list with a name and a Play button. Nothing
+      is cut yet. Untick anything you don't want.</p>
+    <img class="shot" src="../media/app-moments.jpg" width="1600" height="1128" loading="lazy"
+         alt="The moments found: a timeline of kills over 4 hours 35 minutes, and a list named Team ace, Almost 1v3, 4 kills, Last alive">
+  </li>
+  <li>
+    <h3>Press <b>Cut these clips</b></h3>
+    <p>Your clips are saved in <b>Videos</b>, under <code>AutoStream\clips</code>, in a folder for that recording.
+      From the same screen you can <em>Make a reel</em> from them, or, for Valorant, make the
+      <a href="highlights.html">stream highlight</a>.</p>
+  </li>
+</ol>
+
+<h2>If something is off</h2>
+<dl class="fixes">
+  <dt>The button is greyed out</dt>
+  <dd>The reason is written right under it. Usually the video tool is missing, with an Install button beside it.</dd>
+  <dt>It found no kills, or too few</dt>
+  <dd>Check you picked the right game for the video. For a game AutoStream does not know, see
+    <a href="#how-it-finds">how it finds moments</a> below.</dd>
+  <dt>Valorant kills are missing or doubled</dt>
+  <dd>Keep AutoStream open whenever you play Valorant, even in the menus. It then saves each match's details from
+    the game, which is far more exact than watching the screen. Played with it closed? <em>Fetch match records
+    now</em> on the Clips page goes back over your recent matches.</dd>
+</dl>
+
+<details class="tech" id="how-it-finds">
+  <summary><span>How does AutoStream find my moments?<small>And why some games give more accurate kills</small></span></summary>
+  <div class="body">
+    <p>Not every game draws a kill marker, so there is no single trick. Two things can tell AutoStream where your
+      kills are, and they are not close in quality. Reading the screen always works and is approximate. The game's
+      own record of the match is exact, and knows things no screen shows: who was still alive, whether a shot went
+      through smoke. That is what turns "3 kills" into "1v3 clutch".</p>
+    <div class="table-scroll"><table>
+      <thead><tr><th scope="col">Game</th><th scope="col">What it reads</th><th scope="col">What you do</th></tr></thead>
+      <tbody>
+        <tr><td>Valorant</td><td>Riot's match record from the game client on your PC: exact kill times and who was
+          alive at each. Without it, the yellow border the game draws round your own row in the kill feed, at about
+          14 times real time.</td><td>Keep AutoStream running while you play.</td></tr>
+        <tr><td>Counter-Strike 2</td><td>Your <code>.dem</code> replay: rounds, clutches, kills through smoke,
+          wallbangs, no-scopes. Without one, the kill-card tally under the crosshair, at about 10 times real time.</td>
+          <td>In the game: <em>Watch</em>, your match, <em>Download</em>. AutoStream finds it and works out which
+          player is you.</td></tr>
+        <tr><td>Delta Force</td><td>The skull drawn under the crosshair.</td><td>Nothing.</td></tr>
+        <tr><td>Marvel Rivals</td><td>The HUD: ult meter, health bar and objective line. You get a summary of each
+          match with the dead time cut, and a highlight of its fights.</td><td>Nothing.</td></tr>
+        <tr><td>Any other game</td><td>A kill marker you show it once (<em>Calibrate a game</em>: scrub to a frame just
+          after a kill and box the marker), or the loud moments in the audio. Loud moments are never called kills,
+          because they might not be.</td><td>About a minute, or nothing.</td></tr>
+      </tbody>
+    </table></div>
+    <h3>Reactions</h3>
+    <p>Your reactions are read off your microphone, measured against how loudly you normally talk. That needs your mic
+      on its own audio track, which AutoStream's own recordings have.</p>
+    <h3>Do not rename recordings</h3>
+    <p>A name like <code>2026-09-05 00-46-48.mp4</code>, the way most recording apps name files, is the exact time it was recorded, and that is how
+      a recording is matched to its demo or match record.</p>
+    <h3>Clip settings</h3>
+    <div class="table-scroll"><table>
+      <thead><tr><th scope="col">Style</th><th scope="col">Before the kill</th><th scope="col">After</th><th scope="col">Length</th></tr></thead>
+      <tbody>
+        <tr><td>Short-form</td><td>1.5 s</td><td>2 s</td><td>15 s</td></tr>
+        <tr><td>Montage cut</td><td>1 s</td><td>1.5 s</td><td>6 s</td></tr>
+        <tr><td>Full context</td><td>6 s</td><td>4 s</td><td>30 s</td></tr>
+      </tbody>
+    </table></div>
+    <p>Then the minimum kills per clip, whether you want 1080x1920 verticals, and whether to build a montage.
+      Counter-Strike gets at least 3 seconds before and 4 after, because a kill there ends a slow approach. In the
+      review you can also write a caption for the vertical, set its framing, and add zoom, freeze and sound effects.
+      Running it again with other settings reuses the first reading, so it is nearly instant.</p>
+  </div>
+</details>
+
+<nav class="next" aria-label="Next and previous tutorial"><a href="install.html"><small>Previous</small>Install AutoStream</a><a href="reels.html" style="text-align:right"><small>Next</small>Make a song reel</a></nav>
+  </article>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <div>
+      <p>AutoStream is free software under the Apache License 2.0, made in the open on GitHub. Bugs and ideas go
+        in the issue tracker.</p>
+    </div>
+    <ul>
+      <li><a href="./">Tutorials</a></li>
+      <li><a href="../faq.html">FAQ</a></li>
+      <li><a href="https://github.com/hardikneeravsharma/AutoStream">Source</a></li>
+      <li><a href="https://github.com/hardikneeravsharma/AutoStream/issues">Issues</a></li>
+      <li><a href="https://github.com/hardikneeravsharma/AutoStream/releases">Releases</a></li>
+    </ul>
+  </div>
+</footer>
+<script src="../assets/site.js" defer></script>
+</body>
+</html>

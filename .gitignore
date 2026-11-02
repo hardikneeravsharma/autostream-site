@@ -1,0 +1,5 @@
+# Review screenshots, social drafts and notes stay off the public repo.
+preview/
+social/
+REVIEW-*.md
+DEPLOY.md

@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>document.documentElement.classList.add('js')</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AutoStream: turn your gaming recordings into clips, reels and highlight videos</title>
+<meta name="description" content="Free app for gamers. Give it a recording and it finds your kills and reactions, cuts them into clips and Shorts, makes song reels and edits whole streams into highlight videos. No account. Your recordings stay on your PC.">
+<meta property="og:title" content="AutoStream: play your games, keep the good bits">
+<meta property="og:description" content="Finds your kills and reactions, cuts them into clips, and turns your best moments into reels and highlight videos. Free and open source.">
+<meta property="og:image" content="media/hero.jpg">
+<link rel="icon" href="assets/autostream.ico">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="assets/logo.png" alt="" width="30" height="30">AutoStream</a>
+    <a class="nav-get nav-get-m" href="#download">Download</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><span class="bars" aria-hidden="true"></span><span class="sr">Menu</span></button>
+    <nav id="site-nav" aria-label="Site">
+      <a href="#makes">What it makes</a>
+      <a href="tutorials/">Tutorials</a>
+      <a href="faq.html">FAQ</a>
+      <a class="nav-gh" href="https://github.com/hardikneeravsharma/AutoStream">GitHub</a>
+      <a class="nav-get" href="#download">Download</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <h1>Play your games. Keep the good bits.</h1>
+      <p class="lede">AutoStream finds kills in supported games and interesting moments in your recordings. Turn them
+        into clips, song reels and full highlight videos.</p>
+    </div>
+
+    <figure class="showreel">
+      <div class="reel-top">
+        <p class="real">Real example from YuvaNeta's stream</p>
+        <div class="caplang" role="group" aria-label="Caption language">
+          <span aria-hidden="true">Captions</span>
+          <button type="button" data-lang="en" aria-pressed="true">English</button>
+          <button type="button" data-lang="hi" aria-pressed="false">Hinglish</button>
+        </div>
+      </div>
+      <div class="frame">
+        <video id="showreel" data-loop data-stages="0,3,5,7.97,11.97" src="media/hero.mp4" poster="media/hero.jpg"
+               muted loop playsinline autoplay preload="metadata" width="1280" height="720"
+               aria-label="One evening of Valorant going through AutoStream: a kill from the recording, the list of moments it found, two song reels, the highlight video zoomed in on the player's face with a caption, and the finished clips and video"></video>
+        <!-- what was said at that moment of the stream, in the app's own two caption languages -->
+        <p class="cap" hidden></p>
+        <span hidden data-line data-at="8.23,10.67" data-en="Bro, leave the one who wants to surrender,"
+              data-hi="Jisko sarendar karna chod ke chale jo koi dikrat nahin hai"></span>
+        <span hidden data-line data-at="10.67,12.0" data-en="We will play 4v5, okay" data-hi="4v5 khel lenge, okay"></span>
+      </div>
+      <ol class="stages" aria-label="What you are watching">
+        <li><b>The kill</b><span>From your recording</span></li>
+        <li><b>Found</b><span>Named and listed</span></li>
+        <li><b>Song reel</b><span>Cut to the beat</span></li>
+        <li><b>Highlight</b><span>Your face, with captions</span></li>
+        <li><b>Ready</b><span>Clips, Shorts, videos</span></li>
+      </ol>
+      <figcaption>Made by AutoStream from one evening of Valorant, shortened for this page. No sound.</figcaption>
+    </figure>
+
+    <div class="hero-get">
+      <ul class="promises" aria-label="The basics">
+        <li>Free</li><li>Open source</li><li>No account</li><li>Your recordings stay on your PC</li>
+      </ul>
+      <div class="get">
+        <a class="btn btn-main" data-asset="win-setup" href="https://github.com/hardikneeravsharma/AutoStream/releases/latest">
+          Download for Windows <small>Free, version <span data-version>2.16.0</span></small></a>
+        <a class="btn btn-alt" href="#watch">Watch what it makes</a>
+      </div>
+      <p class="fine">On a Mac? Clips and song reels work there too. <a href="#download">See the Mac download</a>.</p>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+<section id="makes">
+  <div class="wrap">
+    <h2>One recording. Four ways to use it.</h2>
+    <p class="intro">Start with any video of you playing. You do not need to have streamed it.</p>
+
+    <div class="uses">
+      <article class="use">
+        <div>
+          <p class="what">Auto clipper <span class="start">Start here</span></p>
+          <h3>Every good play, ready to share.</h3>
+          <p>Give it a recording. It finds your kills and big reactions, and cuts each good play into its own short
+            video. It makes a vertical version too, ready for YouTube Shorts, Instagram Reels and TikTok.</p>
+          <p class="note">It shows you everything it found before it cuts, so you can drop a bad one.</p>
+          <a class="more" href="tutorials/clips.html">Make clips from a recording</a>
+        </div>
+        <div class="media-clips">
+          <figure class="vid wide">
+            <video data-loop data-src="media/clip-4kills.mp4" poster="media/clip-4kills.jpg" muted loop playsinline preload="none"
+                   width="960" height="540" aria-label="A clip AutoStream cut: four kills in one round of Valorant"></video>
+            <figcaption>A clip it cut and named: 4 kills</figcaption>
+          </figure>
+          <figure class="vid tall">
+            <video data-loop data-src="media/clip-vertical.mp4" poster="media/clip-vertical.jpg" muted loop playsinline preload="none"
+                   width="720" height="1280" aria-label="The tall version of a clip, captioned 1v2 clutch"></video>
+            <figcaption>The vertical version</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="use">
+        <div>
+          <p class="what">Song reels</p>
+          <h3>Your kills. On the beat.</h3>
+          <p>Pick a song and a style. AutoStream cuts your kills so each one lands on a beat. Add slow motion, speed
+            changes, song lyrics when available, and your facecam if you want.</p>
+          <p class="note">Styles include Hype, Velocity, Clean and Chaos. Use a song file you have, or paste a YouTube link.</p>
+          <a class="more" href="tutorials/reels.html">Make a song reel</a>
+        </div>
+        <div class="media-reels">
+          <figure class="vid tall">
+            <video data-loop data-src="media/reel-hype.mp4" poster="media/reel-hype.jpg" muted loop playsinline preload="none"
+                   width="720" height="1280" aria-label="A Hype style reel: fast cuts, a kill counter, the game over a blurred copy of itself"></video>
+            <figcaption>Hype</figcaption>
+          </figure>
+          <figure class="vid tall">
+            <video data-loop data-src="media/reel-velocity.mp4" poster="media/reel-velocity.jpg" muted loop playsinline preload="none"
+                   width="720" height="1280" aria-label="A Velocity style reel with the player's camera above the game"></video>
+            <figcaption>Velocity, with the camera on top</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="use">
+        <div>
+          <p class="what">Stream highlights</p>
+          <h3>Your stream's best moments, edited into a video.</h3>
+          <p>It finds your best fights and your loudest reactions, keeps what you were saying around them, cuts the
+            waiting, and zooms in on your face when you react.</p>
+          <p class="note">For Valorant streams.
+            <a href="tutorials/highlights.html#captions">Optional English and Hinglish captions</a> · currently needs a
+            supported NVIDIA graphics card.</p>
+          <a class="more" href="tutorials/highlights.html">Make a stream highlight</a>
+        </div>
+        <figure class="vid wide">
+          <video data-loop data-src="media/highlight.mp4" poster="media/highlight.jpg" muted loop playsinline preload="none"
+                 width="1280" height="720" aria-label="A stretch of a stream highlight: a round is lost, then the picture zooms onto the player's face with a Hinglish caption"></video>
+          <figcaption>From a 20-minute highlight of one evening: the round ends, the camera moves to the face, the caption follows.</figcaption>
+        </figure>
+      </article>
+
+      <article class="use small">
+        <div>
+          <p class="what">Automatic live and record <span class="muted">(optional, Windows)</span></p>
+          <h3>Start playing. Your stream can start too.</h3>
+          <p>Open a game and AutoStream can go live and record it for you, then stop when you do.</p>
+        </div>
+        <a class="more" href="#live">How that works</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>You play. AutoStream does the sorting.</h2>
+    <p class="intro">Three steps, and the first one is playing.</p>
+    <ol class="steps3">
+      <li>
+        <div><h3>Play, or pick a recording</h3>
+        <p>Any video of your game works, even an old one. You do not need to have streamed.</p></div>
+        <img class="shot" src="media/app-summary.jpg" width="1600" height="530" loading="lazy"
+             alt="AutoStream's Clips page with a 4 hour 35 minute Valorant recording picked, and a button to choose any other video">
+      </li>
+      <li>
+        <div><h3>See what it found</h3>
+        <p>Every kill, clutch and close call, on one timeline. Watch any of them, untick the ones you don't want.</p></div>
+        <img class="shot crop" src="media/app-moments.jpg" width="1600" height="1128" loading="lazy"
+             alt="The moments AutoStream found in the recording: a timeline of kills across eight matches and a list named Team ace, Almost 1v3, 4 kills, Last alive">
+      </li>
+      <li>
+        <div><h3>Make clips, reels or a highlight</h3>
+        <p>Choose what you want made. Change anything you don't like in the editor afterwards.</p></div>
+        <img class="shot" src="media/app-styles.jpg" width="1600" height="728" loading="lazy"
+             alt="The reel maker's first step: pick a style, with a preview of each one">
+      </li>
+    </ol>
+    <div class="example">
+      <p class="label">One real evening</p>
+      <div class="flow">
+        <p><b>4h 35m</b><span>recorded</span></p>
+        <p><b>63 clips</b><span>covering 95 kills</span></p>
+        <p><b>20 min</b><span>of highlights from 3 matches</span></p>
+      </div>
+      <p class="fine">Actual example, not a guaranteed result.</p>
+    </div>
+  </div>
+</section>
+
+<section class="ink" id="watch">
+  <div class="wrap">
+    <h2>Don't take our word for it. Watch the edits.</h2>
+    <p class="intro">Everything here was made by AutoStream from the developer's own games, then shortened for this page.</p>
+    <div class="tabs" role="tablist" aria-label="Examples">
+      <button type="button" role="tab" id="tab-reels" aria-controls="panel-reels" aria-selected="true">Reels</button>
+      <button type="button" role="tab" id="tab-clips" aria-controls="panel-clips" aria-selected="false" tabindex="-1">Clips</button>
+      <button type="button" role="tab" id="tab-highlights" aria-controls="panel-highlights" aria-selected="false" tabindex="-1">Highlights</button>
+    </div>
+
+    <div class="panel" id="panel-reels" role="tabpanel" aria-labelledby="tab-reels">
+      <div class="wall reels">
+        <figure class="vid tall">
+          <video data-loop data-src="media/reel-hype.mp4" poster="media/reel-hype.jpg" muted loop playsinline preload="none" width="720" height="1280"
+                 aria-label="Hype style reel"></video>
+          <figcaption><b>Hype</b>Fast and loud, a cut every couple of beats.</figcaption>
+        </figure>
+        <figure class="vid tall">
+          <video data-loop data-src="media/reel-velocity.mp4" poster="media/reel-velocity.jpg" muted loop playsinline preload="none" width="720" height="1280"
+                 aria-label="Velocity style reel with the player's camera"></video>
+          <figcaption><b>Velocity</b>Each kill slows on its beat, the rest rushes.</figcaption>
+        </figure>
+        <figure class="vid tall">
+          <video data-loop data-src="media/reel-clean.mp4" poster="media/reel-clean.jpg" muted loop playsinline preload="none" width="720" height="1280"
+                 aria-label="Clean style reel: long shots, almost no effects"></video>
+          <figcaption><b>Clean</b>Calm: long shots, almost no effects.</figcaption>
+        </figure>
+        <figure class="vid tall">
+          <video data-loop data-src="media/reel-chaos.mp4" poster="media/reel-chaos.jpg" muted loop playsinline preload="none" width="720" height="1280"
+                 aria-label="Chaos style reel: many fast cuts and flashes"></video>
+          <figcaption><b>Chaos</b>Everything at once. Loud on purpose.</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="panel" id="panel-clips" role="tabpanel" aria-labelledby="tab-clips" hidden>
+      <div class="wall clips">
+        <figure class="vid wide">
+          <video data-loop data-src="media/clip-3k.mp4" poster="media/clip-3k.jpg" muted loop playsinline preload="none" width="960" height="540"
+                 aria-label="Clip: three kills in five seconds"></video>
+          <figcaption><b>3 kills in 5 seconds</b>Named by AutoStream</figcaption>
+        </figure>
+        <figure class="vid wide">
+          <video data-loop data-src="media/clip-lastalive.mp4" poster="media/clip-lastalive.jpg" muted loop playsinline preload="none" width="960" height="540"
+                 aria-label="Clip: last alive against four"></video>
+          <figcaption><b>Last alive, 1 against 4</b>It counts who was still alive</figcaption>
+        </figure>
+        <figure class="vid wide">
+          <video data-loop data-src="media/clip-4kills.mp4" poster="media/clip-4kills.jpg" muted loop playsinline preload="none" width="960" height="540"
+                 aria-label="Clip: four kills in a round"></video>
+          <figcaption><b>4 kills</b>One round, start to finish</figcaption>
+        </figure>
+        <figure class="vid wide">
+          <video data-loop data-src="media/clip-cs2.mp4" poster="media/clip-cs2.jpg" muted loop playsinline preload="none" width="960" height="540"
+                 aria-label="Counter-Strike 2 clip: two kills in one round"></video>
+          <figcaption><b>Counter-Strike 2: 2 kills</b>Found in the recording</figcaption>
+        </figure>
+        <figure class="vid tall">
+          <video data-loop data-src="media/clip-vertical.mp4" poster="media/clip-vertical.jpg" muted loop playsinline preload="none" width="720" height="1280"
+                 aria-label="Vertical version of a clip with a caption"></video>
+          <figcaption><b>Vertical version</b>Captioned, ready for Shorts</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="panel" id="panel-highlights" role="tabpanel" aria-labelledby="tab-highlights" hidden>
+      <div class="wall highlight">
+        <figure class="vid wide">
+          <video data-loop data-src="media/highlight.mp4" poster="media/highlight.jpg" muted loop playsinline preload="none" width="1280" height="720"
+                 aria-label="Stream highlight: gameplay with a caption, the round result, then the face camera filling the screen with a caption"></video>
+        </figure>
+        <div>
+          <h3>Three matches, 20 minutes</h3>
+          <p class="muted">Made from the 4 h 35 min recording above. It keeps whole fights rather than lone kills, cuts the
+            time spent waiting, and moves to your face when you are dead and talking. The captions are what was
+            said, written the way it was said.</p>
+          <p><a href="tutorials/highlight-editor.html">Change any of it in the editor</a></p>
+        </div>
+      </div>
+      <div class="wall highlight second">
+        <figure class="vid wide">
+          <video data-loop data-src="media/highlight-rivals.mp4" poster="media/highlight-rivals.jpg" muted loop playsinline preload="none" width="960" height="540"
+                 aria-label="Marvel Rivals match highlight: a title card naming the hero, the map and the win, then the fights"></video>
+        </figure>
+        <div>
+          <h3>Marvel Rivals: one match, the fights only</h3>
+          <p class="muted">Each match becomes its own video with the waiting cut out, plus a short highlight like this
+            one: a title, then only the fights.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Don't like a moment? Change it.</h2>
+    <div class="editor">
+      <figure>
+        <a class="zoom" href="media/app-editor-full.jpg"><img class="shot" src="media/app-editor.jpg" width="1600" height="1610" loading="lazy"
+             alt="The highlight editor: the video on top, a row of moments, face zooms, captions and volume underneath, and everything that was said on the right"></a>
+        <figcaption>The highlight editor, open on the video above. <a class="zoom zoom-hint" href="media/app-editor-full.jpg">Click to enlarge</a></figcaption>
+      </figure>
+      <div>
+        <ul class="changes">
+          <li><b>Remove a moment</b><span>Drag its edges to trim it, or take it out. It stays greyed out so you can bring it back.</span></li>
+          <li><b>Zoom on your face</b><span>Draw the zoom for as long as you want it.</span></li>
+          <li><b>Fix a caption</b><span>Change the words, move it, or hide it.</span></li>
+          <li><b>Set the volume</b><span>Your voice and the game each get their own line you can raise or lower.</span></li>
+        </ul>
+        <p class="firstcut">AutoStream makes the first edit. You decide what stays.</p>
+        <p class="muted">Nothing is made until you press Make video, and the original is never changed.</p>
+      </div>
+    </div>
+    <div class="also">
+      <div>
+        <h3>Reels open on a timeline too</h3>
+        <p class="muted">Move a shot, trim it, change its effect. The song is drawn underneath with every kill marked, so
+          you can see each one land on the beat.</p>
+        <a class="more" href="tutorials/reels.html">Edit a reel</a>
+      </div>
+      <img class="shot" src="media/app-timeline.jpg" width="1600" height="596" loading="lazy"
+           alt="A reel's timeline: shots in a row with their kills marked, effects, and the song drawn as a colourful picture of its sound with every beat marked">
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Works with the games you play.</h2>
+    <dl class="games">
+      <div><dt>Valorant</dt>
+        <dd>Finds your kills from the match info, including multi-kills and clutches. Keep AutoStream open while you
+          play so it can save that info.</dd></div>
+      <div><dt>Counter-Strike 2</dt>
+        <dd>Finds your kills in the recording. Save the match replay in the game and it can also name rounds,
+          clutches and kills through smoke.</dd></div>
+      <div><dt>Marvel Rivals</dt>
+        <dd>Finds the moments of each match and makes a video of it with the waiting removed.</dd></div>
+      <div><dt>Delta Force</dt>
+        <dd>Finds your kills. No setup.</dd></div>
+      <div><dt>Other games</dt>
+        <dd>Show it one example kill. Or let it find the loud moments in your recording. Those are labelled
+          moments, not kills.</dd></div>
+    </dl>
+    <p style="margin-top: var(--s5)"><a class="more" href="tutorials/clips.html#how-it-finds">How does AutoStream find my moments?</a></p>
+  </div>
+</section>
+
+<section id="live">
+  <div class="wrap split">
+    <div>
+      <h2>Want AutoStream to handle going live too?</h2>
+      <p>You don't need this to make clips. But if you stream, AutoStream can do the boring part: open a game and it
+        starts your stream on YouTube, Twitch or Kick, names it after the game, records it, and ends it when you stop
+        playing.</p>
+      <p>Every stream starts private, with a 20-second countdown and a Cancel button, so nothing goes public by
+        surprise.</p>
+      <p class="muted">Windows only. You set it up once, in about 15 minutes.</p>
+      <a class="more" href="tutorials/streaming.html">Set up automatic streaming</a>
+    </div>
+    <figure>
+      <img class="shot" src="media/app-countdown.jpg" width="1060" height="420" loading="lazy"
+           alt="AutoStream holding a new stream private: a ring counting down 4 seconds until public, and a Cancel button">
+      <figcaption>The countdown before a stream goes public, from an earlier version of the app.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Your recordings stay yours.</h2>
+    <ul class="points">
+      <li><b>Free and open source</b><span>No paid version, no trial. Anyone can read the code on GitHub.</span></li>
+      <li><b>No account</b><span>Nothing to sign up for. Download it and use it.</span></li>
+      <li><b>Files stay on your PC</b><span>Recordings, clips and reels are saved in your Videos folder. Nothing is
+        uploaded, and AutoStream never deletes a recording.</span></li>
+      <li><b>No AutoStream server</b><span>There is nothing of ours for your videos to go to.</span></li>
+    </ul>
+    <p class="online">It only goes online for what you ask of it: your stream goes to YouTube, Twitch or Kick if you
+      turn streaming on, a song link you paste is fetched from YouTube, and Valorant match details come from the Riot
+      game client on your own PC.</p>
+  </div>
+</section>
+
+<section class="download paper" id="download">
+  <div class="wrap">
+    <h2>Ready to keep your best plays?</h2>
+    <p class="muted">Version <span data-version>2.16.0</span>. To make clips, reels and highlights you need nothing else.</p>
+    <div class="platforms">
+      <div class="platform">
+        <h3>Windows</h3>
+        <p class="does">Everything: clips, song reels, highlight videos, and automatic live streaming if you want it.</p>
+        <div class="get">
+          <a class="btn btn-main" data-asset="win-setup" href="https://github.com/hardikneeravsharma/AutoStream/releases/latest">
+            Download the installer <small>Recommended · <span data-size>71 MB</span></small></a>
+        </div>
+        <p class="alt-get"><a data-asset="win-zip" href="https://github.com/hardikneeravsharma/AutoStream/releases/latest">Portable
+          version · ZIP · No installation</a> <span><span data-size>98 MB</span>. Use the installer unless you need this.</span></p>
+        <div class="trust">
+          <p><b>Windows may warn you the first time.</b> AutoStream is not signed with a paid certificate yet, so
+            Windows does not know who made it. Choose <em>More info</em>, then <em>Run anyway</em>.</p>
+          <p>Want to check it first? The <a href="https://github.com/hardikneeravsharma/AutoStream">source code</a> is
+            public, and every file has a checksum to compare:
+            <a data-sum="win-setup" href="https://github.com/hardikneeravsharma/AutoStream/releases/latest">installer</a>,
+            <a data-sum="win-zip" href="https://github.com/hardikneeravsharma/AutoStream/releases/latest">ZIP</a>.
+            <a href="tutorials/install.html">Install guide</a></p>
+        </div>
+      </div>
+      <div class="platform">
+        <h3>Mac</h3>
+        <p class="does">Make clips and song reels on your Mac. Automatic live streaming is Windows only.</p>
+        <div class="get mac">
+          <a class="btn btn-alt" data-asset="mac-arm" href="https://github.com/hardikneeravsharma/AutoStream/releases/latest">
+            Apple Silicon <small>M1, M2, M3 or newer · <span data-size>75 MB</span></small></a>
+          <a class="btn btn-alt" data-asset="mac-intel" href="https://github.com/hardikneeravsharma/AutoStream/releases/latest">
+            Intel <small>Older Macs · <span data-size>75 MB</span></small></a>
+        </div>
+        <p class="checks">Not sure which? Apple menu, <em>About This Mac</em>, and look at <em>Chip</em>. macOS 11 or
+          newer. It needs one free video tool installed first; the <a href="tutorials/install.html#mac">install
+          guide</a> has the one line to paste.</p>
+      </div>
+    </div>
+    <p style="margin-top: var(--s5)"><a href="https://github.com/hardikneeravsharma/AutoStream/releases">Every version and what changed</a></p>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div>
+      <p>AutoStream is free software under the Apache License 2.0, made in the open on GitHub. Bugs and ideas go
+        in the issue tracker.</p>
+    </div>
+    <ul>
+      <li><a href="tutorials/">Tutorials</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="https://github.com/hardikneeravsharma/AutoStream">Source</a></li>
+      <li><a href="https://github.com/hardikneeravsharma/AutoStream/issues">Issues</a></li>
+      <li><a href="https://github.com/hardikneeravsharma/AutoStream/releases">Releases</a></li>
+    </ul>
+  </div>
+</footer>
+<script src="assets/site.js" defer></script>
+</body>
+</html>
