@@ -75,6 +75,16 @@
     .catch(function () { /* the releases page links stay */ });
 })();
 
+/* Counts presses of the download links. The files live on GitHub, which cannot say which downloads
+   came from this site. Listening on the document covers every page, and with the counter blocked
+   the link simply works uncounted. */
+document.addEventListener("click", function (e) {
+  var a = e.target.closest && e.target.closest("[data-asset]");
+  if (a && window.goatcounter && window.goatcounter.count) {
+    window.goatcounter.count({ path: "download-" + a.getAttribute("data-asset"), event: true });
+  }
+});
+
 /* The videos.
    Every example on the page is a short silent loop of real output. Ones below the fold carry
    their file in data-src and get it only when they come near the screen, so the first visit
