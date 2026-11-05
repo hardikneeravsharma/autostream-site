@@ -1,0 +1,61 @@
+# GitHub keeps only a running total per release file, with no history, so a trend has to be
+# saved as it happens. One row a day goes to stats/downloads.csv on the `stats` branch: not on
+# main, which would rebuild the site for every row. Checksum files get their own column because
+# hardly anyone fetches one by hand, and release checks do, so they are not people.
+name: Download stats
+
+on:
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: download-stats
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Count the downloads
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: hardikneeravsharma/AutoStream
+        run: |
+          latest=$(gh api "repos/$REPO/releases/latest" --jq .tag_name)
+          gh api --paginate "repos/$REPO/releases?per_page=100" \
+            --jq '.[].assets[] | [.name, .download_count] | @tsv' > "$RUNNER_TEMP/assets.tsv"
+          test -s "$RUNNER_TEMP/assets.tsv"
+          awk -F'\t' -v date="$(date -u +%F)" -v latest="$latest" '
+            $1 ~ /\.sha256$/ { sums += $2; next }
+            $1 ~ /\.exe$/    { exe  += $2; next }
+            $1 ~ /\.zip$/    { zip  += $2; next }
+            $1 ~ /\.dmg$/    { dmg  += $2; next }
+                             { other += $2 }
+            END { printf "%s,%s,%d,%d,%d,%d,%d,%d\n", date, latest, exe+zip+dmg, exe, zip, dmg, sums, other }
+          ' "$RUNNER_TEMP/assets.tsv" > "$RUNNER_TEMP/row.csv"
+          cat "$RUNNER_TEMP/row.csv"
+
+      - name: Save the row
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch stats 2>/dev/null || git switch --orphan stats
+          mkdir -p stats
+          file=stats/downloads.csv
+          today=$(cut -d, -f1 "$RUNNER_TEMP/row.csv")
+          if [ ! -f "$file" ]; then
+            echo "date,latest,total,exe,zip,dmg,checksums,other" > "$file"
+          fi
+          # a second run on the same day replaces that day's row rather than adding another
+          grep -v "^$today," "$file" > "$RUNNER_TEMP/kept.csv" || true
+          cat "$RUNNER_TEMP/kept.csv" "$RUNNER_TEMP/row.csv" > "$file"
+          git add "$file"
+          git diff --cached --quiet || git commit -m "downloads: $today"
+          git push origin stats
