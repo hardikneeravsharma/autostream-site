@@ -1,7 +1,11 @@
 # GitHub keeps only a running total per release file, with no history, so a trend has to be
-# saved as it happens. One row a day goes to stats/downloads.csv on the `stats` branch: not on
-# main, which would rebuild the site for every row. Checksum files get their own column because
+# saved as it happens. One row a day goes to stats/site-downloads.csv on the `stats` branch: not
+# on main, which would rebuild the site for every row. Checksum files get their own column because
 # hardly anyone fetches one by hand, and release checks do, so they are not people.
+#
+# The releases are counted here, where they are copied for download (scripts/mirror_release.py in
+# the app repo), because the app repo is private and this job cannot read it. Its own totals
+# stopped at 1,162 on 2026-11-06; stats/downloads.csv keeps those days.
 name: Download stats
 
 on:
@@ -26,7 +30,7 @@ jobs:
       - name: Count the downloads
         env:
           GH_TOKEN: ${{ github.token }}
-          REPO: hardikneeravsharma/AutoStream
+          REPO: hardikneeravsharma/autostream-site
         run: |
           latest=$(gh api "repos/$REPO/releases/latest" --jq .tag_name)
           gh api --paginate "repos/$REPO/releases?per_page=100" \
@@ -48,7 +52,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git switch stats 2>/dev/null || git switch --orphan stats
           mkdir -p stats
-          file=stats/downloads.csv
+          file=stats/site-downloads.csv
           today=$(cut -d, -f1 "$RUNNER_TEMP/row.csv")
           if [ ! -f "$file" ]; then
             echo "date,latest,total,exe,zip,dmg,checksums,other" > "$file"

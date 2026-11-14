@@ -29,7 +29,8 @@
    GitHub for the latest release once per visit and swaps in the exact file, its size and the
    version. If the request fails (offline, rate limit), the links stay as they were. */
 (function () {
-  var REPO = "hardikneeravsharma/AutoStream";
+  // the app's own repo is private; its releases are copied here, where anyone can download them
+  var REPO = "hardikneeravsharma/autostream-site";
   var MATCH = {
     "win-setup": /-windows-x64-setup\.exe$/,
     "win-zip": /-windows-x64\.zip$/,
